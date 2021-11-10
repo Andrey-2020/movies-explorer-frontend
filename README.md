@@ -1,1 +1,9 @@
-# movies-explorer-frontend
+# Финальный проект в процессе обучения в Яндекс Практикум
+
+## О чём этот проект:
+
+Данная дипломная работа - это сервис, в котором можно найти фильмы по запросу и сохранить в личном кабинете.
+
+- [Ссылка на проект на https](https://movies-explorer-frontend.nomoredomains.rocks/)
+- [Ссылка на проект на http](http://movies-explorer-frontend.nomoredomains.rocks/)
+- [Ссылка на проект по IP адресу](https://62.84.114.238/)
