@@ -1,0 +1,111 @@
+.register {
+    margin: 0 auto;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    background: #202020;
+    color: #FFFFFF;
+    width: 396px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register__logo {
+    background-image: url('../../images/logo__register.svg');
+    width: 396px;
+    height: 38px;
+    background-position: 0;
+    background-repeat: no-repeat;
+    margin: 0 0 40px;
+    text-decoration: none;
+}
+
+.register__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: left;
+    margin: 0;
+    margin-bottom: 33px;
+}
+
+.form_type_register {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__input-register {
+    border: none;
+    padding: 0;
+}
+
+.form__text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #8B8B8B;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.form__input-register {
+    width: 396px;
+    height: 46px;
+    background: #202020;
+    padding: 0;
+    box-sizing: content-box;
+    border: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #424242;
+}
+
+.form__input-register:last-child {
+    margin-bottom: 0;
+}
+
+.form__button_type_register {
+    width: 396px;
+    height: 45px;
+    background: #4285F4;
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.register__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+}
+
+.register__answer {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #A0A0A0;
+    margin: 0;
+    margin-right: 6px;
+}
+
+.register__link {
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #3456F3;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .register__title{
+        margin-bottom: 33px;
+    }
+}
