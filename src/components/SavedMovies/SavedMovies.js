@@ -41,7 +41,7 @@ function SavedMovies({ isLogged, setFilter, isFilterMovies, moviesCollection, se
                 <FilterCheckbox isFilterMovies={isFilterMovies} changeFilter={changeFilter} />
                 <MoviesCardList moviesCollection={isFilterMovies ? filterTimeSavedMoviesCollection : moviesCollection} isSaved={true} isLoadingMovies={isLoadingMovies}
                     savedMovies={savedMovies} movieDeleteFromSavedMovies={movieDeleteFromSavedMovies}
-                    movieSaveInStore={movieSaveInStore} foundError={false} serverError={serverError} />
+                    movieSaveInStore={movieSaveInStore} foundError={foundError} serverError={serverError} />
             </div>
             <Footer />
         </section>

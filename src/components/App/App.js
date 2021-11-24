@@ -235,14 +235,14 @@ function App() {
       .then((res) => {
         const movies = [...savedMoviesCollection, res];
         localStorage.setItem('savedMovies', JSON.stringify(movies));
-        setSavedMoviesCollection(prev => [...prev, res]);
+        setSavedMoviesCollection(oldMovieSave => [...oldMovieSave, res]);
         if (isFilterMovies) {
-          setFilterTimeSavedMoviesCollection(prev => [...prev, res]);
+          setFilterTimeSavedMoviesCollection(oldMovieSave => [...oldMovieSave, res]);
 
-          setFilterSavedMoviesCollection(prev => [...prev, res]);
+          setFilterSavedMoviesCollection(oldMovieSave => [...oldMovieSave, res]);
         }
         else {
-          setFilterSavedMoviesCollection(prev => [...prev, res]);
+          setFilterSavedMoviesCollection(oldMovieSave => [...oldMovieSave, res]);
         }
       }).catch((err) => setServerError(true));
     setTimeout(() => {
