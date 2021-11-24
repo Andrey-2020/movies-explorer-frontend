@@ -1,15 +1,18 @@
 import React from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import "./MoviesCardList.css";
-
-function MoviesCardList({isSaved}) {
+import Preloader from "../Preloader/Preloader";
+function MoviesCardList({ moviesCollection, isSaved, isLoadingMovies, savedMovies, movieSaveDelete, movieSave, foundError, serverError }) {
     return (
         <section className="movies-card-list">
-            {/* <span className="search-form__error">{foundError ? "Ничего не найдено" : ""}</span> */}
+            <Preloader isLoadingMovies={isLoadingMovies} />
+            <span className="search-form__error">{foundError ? "Ничего не найдено" : ""}</span>
+            <span className="server__error">{serverError ? "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз" : ""}</span>
             <ul className="movies__collection">
-                <MoviesCard movies={{"name":'33 слова о дизайне', image: './images/movies-image1.jpg', duration: '1ч 47м'}} isSaved={isSaved} />
-                <MoviesCard movies={{"name":'Киноальманах «100 лет дизайна»', image: './images/movies-image2.png', duration: '1ч 3м'}} isSaved={isSaved} />
-                <MoviesCard movies={{"name":'В погоне за Бенкси', image: './images/movies-image3.png', duration: '1ч 42м'}} isSaved={isSaved}/>
+                {moviesCollection.map((movies) => {
+                    return (<MoviesCard key={isSaved ? movies.movieId : movies.id} movies={movies} isSaved={isSaved}
+                        savedMovies={savedMovies} movieSaveDelete={movieSaveDelete} movieSave={movieSave} />)
+                })}
             </ul>
         </section>
 
