@@ -3,10 +3,10 @@ import React from "react";
 import Header from "../Header/Header";
 import "./Promo.css";
 import NavTab from "../NavTab/NavTab";
-function Promo() {
+function Promo({isLogged}) {
   return (
     <section className="promo-page">
-      <Header isLogged={true} isMain={true} isMovies={false} isSavedMovies={false} isProfile={false} />
+      <Header isLogged={isLogged} isMain={true} isMovies={false} isSavedMovies={false} isProfile={false} />
       <div className="promo-page__content">
         <div className="promo-page__container">
           <h1 className="promo-page__title">Учебный проект студента факультета Веб-разработки.</h1>

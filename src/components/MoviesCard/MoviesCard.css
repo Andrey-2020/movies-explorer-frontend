@@ -7,6 +7,7 @@
     box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
     border-radius: 6px;
     margin: 0 auto 0 auto;
+    width: 364px;
 }
 
 .movies-card-image {
@@ -79,6 +80,9 @@
         width: 339px;
         height: 190px;
     }
+    .movies-card {
+        width: 339px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -86,5 +90,8 @@
     .movies-card-image {
         width: 300px;
         height: 168px;
+    }
+    .movies-card {
+        width: 300px;
     }
 }

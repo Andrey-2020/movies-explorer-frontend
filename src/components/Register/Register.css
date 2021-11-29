@@ -1,4 +1,4 @@
-.register {
+.register__container {
     margin: 0 auto;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     background: #202020;
@@ -36,6 +36,7 @@
 }
 
 .form__input-register {
+    color: #FFFFFF;
     border: none;
     padding: 0;
 }
@@ -45,9 +46,20 @@
     font-weight: normal;
     font-size: 10px;
     line-height: 12px;
-    color: #8B8B8B;
+    color: #FFFFFF;
     margin: 0;
     margin-bottom: 10px;
+}
+
+.register__error {
+    margin: auto;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+
+    color: #EE3465;
 }
 
 .form__input-register {
@@ -77,6 +89,13 @@
     line-height: 17px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
+}
+
+.form__button_invalid {
+    color: #ee3465;
+    background-color: #A0A0A0;
+    cursor: default;
 }
 
 .register__links {
@@ -104,8 +123,29 @@
     text-decoration: none;
 }
 
+.form__input-error {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+
+}
+
+.register__error {
+    margin: auto;
+    margin-bottom: 6px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+}
+
 @media screen and (max-width: 1100px) {
-    .register__title{
+    .register__title {
         margin-bottom: 33px;
     }
 }

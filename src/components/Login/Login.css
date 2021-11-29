@@ -1,4 +1,4 @@
-.login{
+.login {
     margin: 0 auto;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     background: #202020;
@@ -10,6 +10,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .login__logo {
     background-image: url('../../images/logo__register.svg');
     width: 396px;
@@ -19,24 +20,30 @@
     margin: 0 0 40px;
     text-decoration: none;
 }
-.login__title{
+
+.login__title {
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
     text-align: left;
     margin-bottom: 40px;
 }
+
 .form_type_login {
     display: flex;
     flex-direction: column;
 }
+
 .form__input-container {
     border: none;
     padding: 0;
     margin: 0;
     margin-bottom: 179px;
 }
-.form__input-login{
+
+.form__input-login {
+
+    color: #FFFFFF;
     width: 396px;
     height: 46px;
     background: #202020;
@@ -44,11 +51,13 @@
     box-sizing: content-box;
     border: none;
     margin-bottom: 20px;
-    border-bottom: 1px solid #424242;;
+    border-bottom: 1px solid #424242;
 }
+
 .form__input-login:last-child {
     margin-bottom: 0;
 }
+
 .form__button_type_login {
     width: 396px;
     height: 45px;
@@ -61,6 +70,7 @@
     line-height: 17px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .login__links {
@@ -78,6 +88,18 @@
     color: #A0A0A0;
     margin: 0;
     margin-right: 6px;
+}
+
+.login__error {
+    margin: auto;
+    margin-bottom: 6px;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EE3465;
+
 }
 
 .login__link {

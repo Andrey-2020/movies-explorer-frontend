@@ -38,6 +38,10 @@
     border: none;
     border-radius: 5px;
 }
+.search-form__error{
+    margin: auto;
+    color: #EE3465;
+}
 @media screen and (max-width: 1100px) {
     .form_type_search{
         margin: 80px 30px 0 30px;
