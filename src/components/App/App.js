@@ -65,6 +65,8 @@ function App() {
         .finally(() => {
           setLoading(false);
         })
+    } else {
+      setLoading(false);
     }
   }
   React.useEffect(() => {
