@@ -52,7 +52,6 @@
     border: none;
     margin-bottom: 20px;
     border-bottom: 1px solid #424242;
-    ;
 }
 
 .form__input-login:last-child {
@@ -71,6 +70,7 @@
     line-height: 17px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .login__links {
@@ -92,12 +92,12 @@
 
 .login__error {
     margin: auto;
+    margin-bottom: 6px;
     font-family: "Inter", Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
     line-height: 12px;
-
     color: #EE3465;
 
 }
