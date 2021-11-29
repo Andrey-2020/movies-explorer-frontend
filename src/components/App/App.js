@@ -57,11 +57,13 @@ function App() {
         .then((user) => {
           setCurrentUser(user);
           setIsLogged(true);
-          setLoading(false);
           // history.push('/movies');
         })
         .catch((err) => {
           setServerError(true);
+        })
+        .finally(() => {
+          setLoading(false);
         })
     }
   }
@@ -99,16 +101,17 @@ function App() {
             .catch((err) => console.log(err));
           getContent(data.token)
             .then((user) => {
-              setLoading(false);
               setCurrentUser(user);
             })
             .catch((err) => {
               setServerError(true);
               setProfileError("Не удалось загрузить данные")
             })
+            .finally(() => {
+              setLoading(false);
+            })
         }
       }).catch((err) => {
-
         if (err.status === 400) return setLoginError('Не валидный email или пароль');
         if (err.status === 401) return setLoginError('Пользователь с email не найден');
         setLoginError('Попробуйте еще раз');
@@ -337,10 +340,10 @@ function App() {
 
 
         <Route exact path="/signin">
-          {isLogged? <Redirect to="/" /> : <Login onLogin={handleLogin} clearErrors={clearAllErrors} loginError={loginError} setLoginError={setLoginError} />}
+          {isLogged ? <Redirect to="/" /> : <Login onLogin={handleLogin} clearErrors={clearAllErrors} loginError={loginError} setLoginError={setLoginError} />}
         </Route>
         <Route exact path="/signup">
-          {isLogged? <Redirect to="/" /> : <Register onRegister={handleRegister} clearErrors={clearAllErrors} registerError={registerError} setRegisterError={setRegisterError} />}
+          {isLogged ? <Redirect to="/" /> : <Register onRegister={handleRegister} clearErrors={clearAllErrors} registerError={registerError} setRegisterError={setRegisterError} />}
         </Route>
         <Route path="*">
           <PageNotFound />
