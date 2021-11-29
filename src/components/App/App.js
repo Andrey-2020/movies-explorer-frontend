@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import { Route, Redirect, Switch, useHistory, useLocation } from "react-router-dom";
+import { Route, Redirect, Switch, useHistory } from "react-router-dom";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import Main from '../Main/Main';
 import Login from "../Login/Login";
@@ -36,11 +36,13 @@ function App() {
 
   const [filterTimeSavedMoviesCollection, setFilterTimeSavedMoviesCollection] = React.useState([]);
   const [filterSavedMoviesCollection, setFilterSavedMoviesCollection] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   function tokenCheck() {
     const jwt = localStorage.getItem('jwt');
     const movies = localStorage.getItem('movies');
     const savedMovies = localStorage.getItem('savedMovies');
+
     if (jwt) {
       if (movies) {
         const result = JSON.parse(movies);
@@ -55,7 +57,8 @@ function App() {
         .then((user) => {
           setCurrentUser(user);
           setIsLogged(true);
-          history.push('/movies');
+          setLoading(false);
+          // history.push('/movies');
         })
         .catch((err) => {
           setServerError(true);
@@ -96,6 +99,7 @@ function App() {
             .catch((err) => console.log(err));
           getContent(data.token)
             .then((user) => {
+              setLoading(false);
               setCurrentUser(user);
             })
             .catch((err) => {
@@ -283,7 +287,7 @@ function App() {
         <Route exact path="/" isLogged={isLogged}>
           <Main isLogged={isLogged} />
         </Route>
-        <ProtectedRoute exact path="/movies" isLogged={isLogged}>
+        <ProtectedRoute exact path="/movies" isLogged={isLogged} loading={loading}>
           <Movies
             isLogged={isLogged}
             isFilterMovies={isFilterMovies}
@@ -303,7 +307,7 @@ function App() {
             serverError={serverError}
             clearAllErrors={clearAllErrors} />
         </ProtectedRoute>
-        <ProtectedRoute exact path="/profile" isLogged={isLogged}>
+        <ProtectedRoute exact path="/profile" isLogged={isLogged} loading={loading}>
           <Profile
             isLogged={isLogged}
             onSignOut={onSignOut}
@@ -311,7 +315,7 @@ function App() {
             profileError={profileError}
             setProfileError={setProfileError} />
         </ProtectedRoute>
-        <ProtectedRoute exact path="/saved-movies" isLogged={isLogged}>
+        <ProtectedRoute exact path="/saved-movies" isLogged={isLogged} loading={loading}>
           <SavedMovies isLogged={isLogged}
             isFilterMovies={isFilterMovies}
             setFilter={changeFilter}
@@ -331,11 +335,12 @@ function App() {
             clearAllErrors={clearAllErrors} />
         </ProtectedRoute>
 
+
         <Route exact path="/signin">
-          {isLogged ? <Redirect to="/" /> : <Login onLogin={handleLogin} clearErrors={clearAllErrors} loginError={loginError} setLoginError={setLoginError} />}
+          {isLogged? <Redirect to="/" /> : <Login onLogin={handleLogin} clearErrors={clearAllErrors} loginError={loginError} setLoginError={setLoginError} />}
         </Route>
         <Route exact path="/signup">
-          {isLogged ? <Redirect to="/" /> : <Register onRegister={handleRegister} clearErrors={clearAllErrors} registerError={registerError} setRegisterError={setRegisterError} />}
+          {isLogged? <Redirect to="/" /> : <Register onRegister={handleRegister} clearErrors={clearAllErrors} registerError={registerError} setRegisterError={setRegisterError} />}
         </Route>
         <Route path="*">
           <PageNotFound />

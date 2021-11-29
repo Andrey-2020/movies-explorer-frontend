@@ -9,7 +9,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
 function SavedMovies({ isLogged, setFilter, isFilterMovies, moviesCollection, searchFilterTime, setFoundError,
     setFilterTimeSavedMoviesCollection, filterTimeSavedMoviesCollection, searchMovies, searchSavedMovies,
-    isLoadingMovies, savedMovies, movieDeleteFromSavedMovies, movieSaveInStore, foundError, serverError, clearAllErrors }) {
+    isLoadingMovies, savedMovies, movieSaveDelete, movieSaveInStore, foundError, serverError, clearAllErrors }) {
 
     React.useEffect(() => {
         clearAllErrors();
@@ -40,7 +40,7 @@ function SavedMovies({ isLogged, setFilter, isFilterMovies, moviesCollection, se
                 <SearchForm isSaved={true} searchMovies={searchMovies} searchSavedMovies={searchSavedMovies} />
                 <FilterCheckbox isFilterMovies={isFilterMovies} changeFilter={changeFilter} />
                 <MoviesCardList moviesCollection={isFilterMovies ? filterTimeSavedMoviesCollection : moviesCollection} isSaved={true} isLoadingMovies={isLoadingMovies}
-                    savedMovies={savedMovies} movieDeleteFromSavedMovies={movieDeleteFromSavedMovies}
+                    savedMovies={savedMovies} movieSaveDelete={movieSaveDelete}
                     movieSaveInStore={movieSaveInStore} foundError={foundError} serverError={serverError} />
             </div>
             <Footer />

@@ -42,9 +42,9 @@ function MoviesCard({ movies, isSaved, savedMovies, movieSaveDelete, movieSave }
     return (
         <li className="movies-card" id={isSaved ? movies._id : movies.id}>
             <a href={isSaved ? movies.trailer : movies.trailerLink} className="movies-card__trailer" target="_blank" rel="noreferrer">
-                <img className="movies-card-image" src={movie.image} alt={movies.name} /></a>
+                <img className="movies-card-image" src={movie.image} alt={movies.nameRU} /></a>
             <div className="movies-card__content">
-                <p className="movies-card__name">{movies.name}</p>
+                <p className="movies-card__name">{movies.nameRU}</p>
                 {isSaved ? <button type="button"
                     onClick={deleteCard}
                     className={"movies-card__delete-button_visible"}>
